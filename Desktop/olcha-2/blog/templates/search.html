@@ -1,0 +1,57 @@
+{% extends 'sidebar.html'%}
+{% load static %}
+
+{% block sidebar %}
+<div class="wrapper container">
+    <div class="wrapper_main ">
+        {% if natijalar %}
+{% for x in natijalar %}
+{% for y in x %}
+<div style="position: relative;" class="main">
+        <span class="fresh">
+            Новинка
+        </span>
+        <span
+            style="display: flex; align-items: center; justify-content: center; flex-direction: column; position: absolute;right: 20px; top: 15px; gap: 7px;">
+            <img src="https://asaxiy.uz/custom-assets/images/icons/heart.svg" alt="">
+            <img src="https://asaxiy.uz/custom-assets/images/icons/compare_gray.svg" alt="">
+        </span>
+        <div class="d">
+            <a href="#">
+
+                <img src="{{y.img}}"
+                    alt="">
+            </a>
+        </div>
+        <p style="padding-left: 30px; margin-top: 20px; margin-bottom: 10px; color: #111; font-weight: 700; letter-spacing: 0.400px;">
+
+         {{y.name}}
+        </p>
+        <span class="span2">{{y.cost}}        </span>
+        <div class="install">
+            {{y.skitka}}
+        </div>
+        <div class="two-a">
+
+            <a class="a2" href="/">
+                buy </a>
+            <a style="width: 60px ; height: 35px; border-radius: 8px;
+                    background-color: #00bfaf;
+                    text-align: center; margin-top: 10px; padding-top: 10px; color: #fff;" href="#">
+                    <i class="fa-solid fa-cart-shopping"></i></a>
+
+        
+    </div>
+</div>
+{% endfor %}
+{% endfor %}
+
+
+{% else %}
+<h3 style="font-family: sans-serif; margin-top: 30px;"> <span style="color: orange; font-weight: bold; font-style: italic;">
+    {{ key }}
+</span> tovari mavjud emas</h3>
+{% endif %}
+    </div>
+</div>
+{% endblock %}

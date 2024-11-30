@@ -1,0 +1,99 @@
+{% extends 'base.html' %} {% block content %}
+<div class="cart container" style="background-color: #f4f7fd">
+  <div class="cart__top d-flex align-items-center mt-4">
+    <p class="m-0">Bosh sahifa</p>
+    <i
+      class="fa-solid fa-chevron-right mx-1"
+      style="font-size: 12px; margin-right: 10px !important"
+    ></i>
+    <p class="m-0">Savatcha</p>
+  </div>
+
+  <div class="cart__btn" style="margin-top: 50px">
+    <h3>Savatcha</h3>
+    <div class="cart__btn--wrapper">
+      <button class="btn btn-primary position-relative">
+        Oddiy zakaz
+        <span
+          class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-warning"
+        >
+          0
+        </span>
+      </button>
+      <button class="btn btn-link position-relative ms-4">
+        Bo'lib to'lash
+        <span
+          class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-warning"
+        >
+          0
+        </span>
+      </button>
+    </div>
+  </div>
+
+  <div class="cart-item-wrapper">
+    <div class="cart-item-wrapper--left mt-4">
+      {% for cart in carts %}
+      <div
+        class="cart-item w-75 p-5 d-flex justify-content-between align-items-center"
+        style="
+          height: 164px;
+          border-radius: 15px;
+          background-color: #ffffff;
+          margin-bottom: 30px;
+        "
+      >
+        <img
+          src="{{cart.tovar.img}} {{ cart.gadjet.img }} {{ cart.notebook.img }} {{ cart.texnika.img }}"
+          alt=""
+          style="width: 100px"
+        />
+        <span>
+          <h4 class="h5">
+            {{cart.tovar.name}} {{ cart.gadjet.name }} {{cart.notebook.name }}
+            {{ cart.texnika.name }}
+          </h4>
+        </span>
+        <div class="d-flex justify-content-center align-items-center">
+          <button class="btn btn-outline-danger rounded-pill">
+            <i class="fa-solid fa-minus"></i>
+          </button>
+          <h1 class="mx-3 m-0 h5">1</h1>
+          <button class="btn btn-outline-danger rounded-pill">
+            <i class="fa-solid fa-plus"></i>
+          </button>
+        </div>
+        <p style="font-size: 20px; margin: 0; font-family: cursive">
+          {{cart.tovar.cost}} {{ cart.gadjet.cost }} {{ cart.notebook.cost }}
+           {{ cart.texnika.cost }}
+        </p>
+        <a class="fa-solid fa-trash" style="color: red; cursor: pointer;" data-bs-target="#removeProduct{{ cart.id }}"  data-bs-toggle="modal"></a>
+      </div>
+
+      <div class="modal fade" id="removeProduct{{ cart.id }}">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+              </button>
+            </div>
+
+            <div class="modal-body">
+              <p class="h5">Savatchadan olib tashlaysizmi?</p>
+            </div>
+
+            <div class="modal-footer">
+              <a class="btn btn-info" href="{% url 'cart_remove' cart.id %}">Ha</a>
+              <button class="btn btn-text" data-bs-dismiss="modal">Qaytish</button>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+{% endblock %}

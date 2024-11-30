@@ -1,0 +1,145 @@
+{% extends "base.html" %}
+{% load humanize %}
+{% block content %}
+{% if tovar %}
+<div class="wrapper container">
+
+
+    <div class="top_button">
+        <p> <span style="color: #858997;"> Главная
+            </span> > <span style="color: #858997;"> Наука и учебники
+            </span> > <span>Математика фанидан мавзулаштирилган саволлар тўплами (Ш. Жумаев ва бошқалар)</span></p>
+    </div>
+
+</div>
+<div class="wrapper_box container">
+    <div class="wrapper_box_left">
+
+
+        <div class="had_main container">
+            <div style="margin-bottom: 35px !important;">
+                <div class="bir">
+                    <img src="{{tovar.cover1}}" alt="">
+                </div>
+                <div class="bir">
+                    <img src="{{tovar.cover2}}" alt="">
+                </div>
+                <div class="bir">
+                    <img src="{{tovar.cover3}}" alt="">
+                </div>
+                <div class="bir">
+                    <img src="{{tovar.cover4}}" alt="">
+                </div>
+            </div>
+            <div class="right">
+                <span class="fresh">
+                    Новинка
+                </span>
+                <img src="{{tovar.img}}" alt="">
+                <div class="div1">
+                    <img src="https://asaxiy.uz/custom-assets/images/icons/heart.svg" alt="">
+                    <!-- <img src="https://asaxiy.uz/custom-assets/images/icons/compare_gray.svg" alt=""> -->
+                </div>
+                <div class="div2">
+                    <!-- <img src="https://asaxiy.uz/custom-assets/images/icons/heart.svg" alt=""> -->
+                    <img src="https://asaxiy.uz/custom-assets/images/icons/compare_gray.svg" alt="">
+                </div>
+            </div>
+            <div class="right2">
+                <h1>{{tovar.name}}</h1>
+                <div>
+                    <i class="fa-regular fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                    <span>
+                        <i class="fa-regular fa-message"></i>
+                        <span> 0 отзывов</span>
+                    </span>
+                    <h3 class="span3">65 000 cym</h3>
+                    <h4>x 12 мес</h4>
+                    <div>
+                        <span class="span4">
+                            Модель:_____ Математика {{tovar.model}}
+                        </span>
+                        <span> Наличии:_____ <span style="color: #00BFAF;
+                                font-size: 16px;
+                                font-weight: 600;
+                              ">● В наличии: {{tovar.count}} шт </span></span>
+                        <div style="font-size: 18px;
+                              font-weight: 600;
+                              color: #0f172a;
+                               margin-top: 10px; ">
+                            Выберите тип книги:
+
+                        </div>
+                        <div>
+                            <button><span>Бумажный</span></button>
+                            <div class="div3">
+                                <a class="a4" href="#">
+
+                                    <img src="https://asaxiy.uz/custom-assets/images/cart-white.svg" alt="">
+                                    Добавить в корзину
+
+                                </a>
+                                <a class="a5" href="/buy/">
+                                    Купить в один клик </a>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="right3 p-6 gap-3 flex flex-column">
+                <h2>bolib tolash</h2>
+                <div
+                    class="w-full h-12 bg-sky-300 p-2 px-3 text-white flex justify-content-betwen align-items-center m-0">
+                    <span>{{ tovar.calculate_3month|intcomma }} som</span>
+                    <span>3 oy</span>
+                </div>
+                <div
+                    class="w-full h-12 bg-sky-300 p-2 px-3 text-white flex justify-content-betwen align-items-center m-0">
+                    <span>{{ tovar.calculate_6month|intcomma }} som</span>
+                    <span>6 oy</span>
+                </div>
+                <div
+                    class="w-full h-12 bg-sky-300 p-2 px-3 text-white flex justify-content-betwen align-items-center m-0">
+                    <span>{{ tovar.calculate_12month|intcomma }} som </span>
+                    <span>12 oy</span>
+                </div>
+
+            </div>
+
+            
+        </div>
+    </div>
+
+</div>
+
+<div class="wrapper-three container">
+    <h3 class="text-lg m-4" style="font-size: 20px; border-bottom: 1px solid #111;">Comment bildirish</h3>
+    <form class="comment" method="post">
+        {% csrf_token %}
+        <textarea name="text" cols="50" rows="6" class="border-1 border-cyan-500 outline-none p-2 ml-4"
+            placeholder="sharhni kiriting Bu tog'ridan to'ri yuboriladi"></textarea>
+        <button class="block ml-4 px-4 py-1 bg-primary text-white cursor-pointer mt-2" tupe="submit">Yuborish</button>
+    </form>
+
+    {% for x in camentlar %}
+    {{ tovar.camentlar  }}
+    {% endfor %}
+
+</div>
+
+
+</div>
+{% else %}
+<h1>bunday tovar mavjud emas</h1>
+{% endif %}
+<footer class="footer">
+    <p><a href="#">Lorem, ipsum dolor.</a>REAN MORE <a href="#">Lorem ipsum dolor sit.</a> </p>
+
+</footer>
+
+{% endblock %}

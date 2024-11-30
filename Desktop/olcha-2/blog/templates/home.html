@@ -1,0 +1,117 @@
+{% extends 'base.html'%} {% load static %} {% block content%}
+<!-- wrapper 1 -->
+{% if messages %}
+<div class="alert alert-warning" style="position: absolute; top: 54px; right: 0;">
+    {% for message in messages %}
+    <p>{{ message }}</p>
+    {% endfor %}
+</div>
+{% endif %}
+
+<div class="wrapper_one container">
+  <div class="wrapper_one-main">
+    <div class="wrapper_one-main-left">
+      <img
+        src="https://olcha.uz/image/original/sliders/oz/cdn_1/2024-05-31/MdDJpVq9HPJhSyciehLeSAHjOtEzBzvMW2zbnaWAwHAbAEZ5yUvE6Xj3LFIS.jpg"
+        alt=""
+      />
+    </div>
+    <div class="wrapper_one-main-right">
+      <div class="wrapper_one-main-right_box">
+        Kun mahsuloti
+
+        <div class="timer">
+          <span>14</span>
+          <span>14</span>
+          <span> 14</span>
+        </div>
+      </div>
+      <div class="chegirma">
+        <button>-9%</button>
+        <img
+          src="https://olcha.uz/image/128x128/category/cdn_1/2024-05-28/K83YTs4SqPeI3Ohx1lN0bDnbiV1Z9EnwZHMr2HsjIlDhmT48cBgn4C0Ve9Br.png"
+          alt=""
+        />
+      </div>
+      <div class="chegirma_quyi">
+        <p>Iphone 15 Pro Purple 16/512 GB 5G</p>
+        <div class="chagirma_quyi_skit">
+          <p>700 000 so'm <span>690 000 so'm</span></p>
+          <button>300 000 so'm 12 oy</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- warpper 2 -->
+
+<!-- warpper 3 -->
+<div class="wrapper container">
+  <div class="wrapper_main">
+    {% for x in tovar%}
+    <div style="position: relative" class="main">
+      <span class="fresh"> Новинка </span>
+      <span
+        style="
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-direction: column;
+          position: absolute;
+          right: 20px;
+          top: 15px;
+          gap: 7px;
+        "
+      >
+        <img
+          src="https://asaxiy.uz/custom-assets/images/icons/heart.svg"
+          alt=""
+        />
+        <img
+          src="https://asaxiy.uz/custom-assets/images/icons/compare_gray.svg"
+          alt=""
+        />
+      </span>
+      <div class="d">
+        <a href="{% url 'tovar' x.unique_id  %}">
+          <img src="{{x.img}}" alt="" />
+        </a>
+      </div>
+      <p
+        style="
+          padding-left: 30px;
+          margin-top: 20px;
+          margin-bottom: 10px;
+          color: #111;
+          font-weight: 700;
+          letter-spacing: 0.4px;
+        "
+      >
+        {{x.name}}
+      </p>
+      <span class="span2">{{x.cost}} </span>
+      <div class="install">{{x.skitka}}</div>
+      <div class="two-a">
+        <a class="a2" href="/buy/"> buy </a>
+        <a
+          style="
+            width: 60px;
+            height: 35px;
+            border-radius: 8px;
+            background-color: #00bfaf;
+            text-align: center;
+            margin-top: 10px;
+            padding-top: 10px;
+            color: #fff;
+          "
+          href="{% url 'add_to_cart' x.unique_id %}"
+        >
+          <i class="fa-solid fa-cart-shopping"></i
+        ></a>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}

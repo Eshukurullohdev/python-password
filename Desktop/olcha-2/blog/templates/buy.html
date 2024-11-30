@@ -1,0 +1,156 @@
+{% extends 'base.html'%}
+{% load static %}
+
+
+{% block content%}
+<h2 class="container" style="font-weight: 550; font-size: 2rem; font-family: 'inline-size: inherit;';">Оформление заказа</h2>
+<div class="wrapper-by container">
+
+<div class="wrapper-by-main">
+    <div class="wrapper-by-main-label">
+     
+        <div class="two-div-orab">
+            <div class="div-orab">
+                <div>
+                    <label>
+                        Телефон 
+                        <span>*</span>
+                    </label>
+                    <input type="tel" data-plugin-inputmask="inputmask_b28e898d" value="+998 (_) _ - _ -" name="BillingForm[phone]" id="">
+                </div>
+                <div>
+                    <label>
+                        Область  
+                        <span>*</span>
+                    </label>
+                    <input type="tel" data-plugin-inputmask="inputmask_b28e898d" value="Выберите" style="letter-spacing: 0.100rem;" name="BillingForm[phone]" id="">
+                </div>
+             </div>
+             
+         </div>
+         <div class="two-div-orab">
+            <div class="div-orab">
+                <div>
+                    <label>
+                        Ф.И.О 
+                        <span>*</span>
+                    </label>
+                    <input type="tel" data-plugin-inputmask="inputmask_b28e898d" " name="BillingForm[phone]" id="">
+                </div>
+                <div>
+                    <label>
+                        Город / Район 
+                        <span>*</span>
+                    </label>
+                    <input type="tel" data-plugin-inputmask="inputmask_b28e898d" value="presentation" style="letter-spacing: 0.100rem;" name="BillingForm[phone]" id="">
+                </div>
+             </div>
+             
+       
+     </div>
+
+    </div>
+    <div class="wrapper-by-main-div">
+        Способ получения
+    </div>
+    <div class="wrapper-by-main-kv">
+        <h2 style="font-size: 18px;">Доставка до двери </h2>
+        <div>
+            <i class="fa-solid fa-check"></i>
+
+            <h3>
+                Стоимость доставки: 0 sym
+            </h3>
+        </div>
+    </div>
+    <div class="wrapper-my-main-inputs">
+<div>
+    <p>Населённый пункт</p>
+   <input type="text" name="" id="" placeholder="Выберите">
+</div>
+<div>
+    <p>Адрес <span style="color: #dc3545 !important;">*</span></p>
+   <input style="border: 3px solid #ced4da !important;" type="text" name="" id="" >
+</div>
+<div>
+    <p>Ориентир </p>
+   <input style="border: 3px solid #ced4da !important;" type="text" name="" id="" >
+</div>
+<div>
+    <p>Ваш рабочий адрес </p>
+<textarea style="width: 914px; height: 87px; border: 3px solid #ced4da !important; border-radius: .35rem;" name="" id=""></textarea>
+</div>
+<div>
+    <p> Комментарий к заказу
+    </p>
+<textarea style="width: 914px; height: 111px; border: 3px solid #ced4da !important; border-radius: .35rem;" name="" id=""></textarea>
+</div>
+<div>
+    <form method="post">
+    <p>
+        Есть промокод?</p>
+   <input type="text" name="" id="" >
+</div>
+    </div>
+    <div class="wrappper-by-main-maket">
+        Способ оплаты
+    </div>
+    <div class="wrapper-by-main-maket-bottom-label">
+        <label>
+
+            <i class="fa-regular fa-credit-card"></i>
+            <span>Картой онлайн (UzCard, Humo, Visa, MasterCard)</span>
+        </label>
+    </div>
+  <div class="wrapper-by-main-bottom-label-bottom-br">
+    <label>
+
+        <i class="fa-solid fa-wallet"></i>
+        <span>При получении (Наличными)</span>
+    </label>
+  </div>
+  <div class="wrapper-by-main-maket-bottom-label">
+    <label>
+
+      <i class="fa-regular fa-circle-user"></i>
+        <span>Оплата с лицевого счёта</span>
+    </label>
+   
+</div>
+<div class="wrapper-by-main-maket-bottom-label-map"> 
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12350882.437922675!2d53.99474213594034!3d40.90802382063893!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38ae8b20a5d676b1%3A0xca0a6dad7e841e20!2sUzbekistan!5e0!3m2!1sen!2s!4v1715407857711!5m2!1sen!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+    <label><p>Я согласен</p> <span> правилами  </span> <p>покупки товаров </p></label>
+</div>
+    <div class="wrapper-by-main-buttons">
+<button>Заказать</button>
+<a href="#">Назад</a>
+    </div>
+</div>
+<div class="wrapper-by-main-right">
+    <p>Цена товара</p>
+    <h3>159 000 som</h3>
+
+    <div>
+        <a href="#">
+            <div class="two-div-orab-top">
+                <img src="https://assets.asaxiy.uz/product/main_image/desktop//663e3c6b0d20a.jpg" alt="">
+
+            </div>
+<div>
+    <p>Игровой кулер для <br> охлаждения телефона </p>
+<p style="font-family: 'Inter',sans-serif;
+font-style: normal;
+font-weight: 500;
+font-size: 13px;"> 1 штука 159 000 сум </p>
+</div>
+        </a>
+    </div>
+</div>
+</div>
+
+    
+      <!-- footer copy right section end -->
+  
+  
+{% endblock%}

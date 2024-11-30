@@ -1,0 +1,278 @@
+ * {
+
+    margin: 0;
+    box-sizing: border-box;
+ }
+ body{
+   background-color: #f4f7fd !important;
+ }
+
+ .container {
+    max-width: 1300px !important;
+    margin-left: auto;
+    margin-right: auto;
+ }
+
+ .wrapper_one-main {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 40px;
+    padding-top: 30px;
+ }
+
+ .wrapper_one-main-right_box {
+    font-feature-settings: "pnum" on, "lnum" on;
+    align-items: center;
+    display: flex;
+    font-size: 18px;
+    font-weight: 700;
+    justify-content: space-between;
+    line-height: 24px;
+    margin-bottom: 8px;
+    padding: 13px 13px 0;
+    width: 100%;
+ }
+
+ .timer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+ }
+
+ .timer span {
+    align-items: center;
+    background: #fff;
+    border: 1px solid #e8e8e8;
+    border-radius: 6px;
+    display: flex;
+    font-weight: 400;
+    height: 28px;
+    justify-content: center;
+    line-height: 24px;
+    margin-right: 8px;
+    padding: 2px;
+    position: relative;
+    width: 28px;
+ }
+
+ .timer span::after {
+    content: ":";
+    display: block;
+    height: 100%;
+    line-height: 1.5em;
+    position: absolute;
+    right: -9px;
+    top: 0;
+    width: 8px;
+ }
+
+ .timer span:last-child::after {
+    content: "";
+ }
+ .chegirma button{
+   padding: 5px 10px;
+   background-color: rgb(255, 0, 0);
+   color: #ffffff;
+   border-radius: 6px;
+   margin-left: 10px;
+ }
+ .chegirma img{
+   width: 180px;
+   height: 180px;
+   object-fit: cover;
+ }
+ .chegirma_quyi p {
+   font-style: italic;
+   color: #000000;
+   font-weight: 600;
+   font-size: 18px;
+   margin-left: 10px;
+ }
+ .chagirma_quyi_skit p
+  {
+   color: #da002b;
+   font-family: monospace;
+  }
+  .chagirma_quyi_skit span{
+   text-decoration: line-through;
+   color: #999;
+  }
+  .chagirma_quyi_skit button{
+   margin-left: 10px;
+   border-radius: 6px;
+   padding: 2px 15px;
+   margin-bottom: 20px;
+   background: #ffd740;
+  }
+  /* section-warp[per */
+
+
+section{
+}
+.section-warpper {
+width: 1440px;  
+height: 196px;
+background-color: #ffffff90;
+box-shadow: 10px 5px 15px #999;
+margin-top: 50px;
+}
+.a_1 {
+   text-decoration: none;
+
+
+}
+
+.a_1 p {
+   font-size: 14px;
+   font-weight: 700;
+   /* font-family: monospace; */
+   color: #000000;
+
+}
+.a_1 p:hover {
+   color: #da002b;
+}
+
+
+
+
+
+/* ajragan quyi home */
+
+ .wrapper_one-main-left img {
+    object-fit: cover;
+    border-radius: 15px;
+    width: 800px;
+    height: 382px;
+    gap: 20px;
+ }
+
+ .wrapper_one-main-right {
+    border: 3px solid #da002b;
+    border-radius: 12px;
+    height: 384px;
+    width: 304px;
+
+ }
+
+ .wrapper {
+    width: 100%;
+    background-color: #ffffff54;
+
+ }
+
+ .wrapper_main {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    flex-wrap: wrap;
+    gap: 40px;
+    padding-top: 50px;
+    margin-bottom: 100px;
+ }
+
+ .main {
+    width: 300px;
+    height: 444px;
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 0px 10px 30px rgba(209, 213, 223, .5);
+    -webkit-transition: all .2s ease;
+    transition: all .2s ease;
+    position: relative;
+    top: 20px;
+
+ }
+
+ .fresh {
+    background-color: red;
+    position: absolute;
+    left: 16px;
+    top: 16px;
+    text-transform: uppercase;
+    color: #fff;
+    padding: 2px 8px;
+    border-radius: 5px;
+    font-size: 12px;
+    z-index: 8;
+ }
+
+ .d {
+    text-align: center;
+    padding-top: 60px;
+ }
+
+ .d img {
+    width: 160px;
+    height: 160px;
+
+ }
+
+ .p1 {
+
+    margin-bottom: 10px;
+    font-size: 13px;
+    color: inherit;
+    line-height: 20px;
+    -webkit-transition: color .2s ease;
+    transition: color .2s ease;
+    font-family: "Inter", sans-serif;
+    font-style: normal;
+
+    text-decoration: none;
+    font-weight: 500;
+    text-align: left;
+    padding-left: 20px;
+ }
+
+ .span2 {
+    font-family: monospace;
+    font-size: 18px;
+    font-weight: 700;
+    color: #008dff;
+    margin-left: 30px;
+ }
+
+ .install {
+    border: 1px solid #fe7300;
+    color: #fe7300;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 500;
+    margin-top: .9rem !important;
+    margin-bottom: 20px !important;
+    padding: .25rem !important;
+    border-radius: .25rem !important;
+    margin-left: 30px;
+    width: 226px;
+    height: 30px;
+
+
+ }
+
+ .two-a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+ }
+
+ .a2 {
+
+    margin-top: 10px !important;
+    font-size: 13px;
+    cursor: pointer;
+    border-radius: 10px;
+    padding: 10px 70px !important;
+    background: #008dff;
+    text-decoration: none;
+    color: #ffffff;
+
+
+ }
+
+ .a2:hover {
+    background-color: #33a4ff;
+    color: #ffffff;
+ }

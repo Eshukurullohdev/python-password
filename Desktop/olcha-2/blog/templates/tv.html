@@ -1,0 +1,47 @@
+{% extends 'sidebar.html'%}
+{% load static%}
+
+{% block sidebar %}
+<div class="disc-wrapper-main container">
+<div class="wrapper_main">
+     {% for x in tovar %}
+            <div style="position: relative;" class="main">
+                <span style="background-color: #ff9800 !important; " class="fresh">
+                    skidka
+                </span>
+                <span
+                    style="display: flex; align-items: center; justify-content: center; flex-direction: column; position: absolute;right: 20px; top: 15px; gap: 7px;">
+                    <img src="https://asaxiy.uz/custom-assets/images/icons/heart.svg" alt="">
+                    <img src="https://asaxiy.uz/custom-assets/images/icons/compare_gray.svg" alt="">
+                </span>
+                <div class="d">
+                    <a href="{% url 'tovar' x.unique_id  %}">
+        
+                        <img src="{{x.img}}"
+                            alt="">
+                    </a>
+                </div>
+                <p style="padding-left: 21px; margin-top: 20px; margin-bottom: 10px; color: #111; font-weight: 700; letter-spacing: 0.400px;">
+                    {{x.name}}
+                </p>
+                <span class="span2">{{x.cost}}        </span>
+                <div class="install">
+                   {{x.skitka}}
+                </div>
+                <div class="two-a">
+        
+                    <a class="a2" href="/">
+                        buy </a>
+                    <a style="width: 60px ; height: 35px; border-radius: 8px;
+                            background-color: #00bfaf;
+                            text-align: center; margin-top: 10px; padding-top: 10px; color: #fff;" href="#">
+                            <i class="fa-solid fa-cart-shopping"></i></a>
+        
+                
+            </div>
+        </div>
+   {% endfor %}
+            </div>
+</div>
+{% endblock  %}
+

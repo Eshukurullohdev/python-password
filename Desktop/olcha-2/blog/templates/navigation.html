@@ -1,0 +1,105 @@
+<header>
+    <div class="header_main container">
+        <div>
+            <a class="header_main-a1" href="/">
+                0% Muddatli to'lov
+            </a>
+            <a class="header_main-a2" href="/">
+                Chegirmalar
+            </a>
+            <a class="header_main-a3" href="/">
+                Yutuqli oyinlar
+            </a>
+            <a class="header_main-a4" href="/">
+                Sayt xaritasi
+            </a>
+        </div>
+
+        <div>
+            <a class="header_main-a5" href="/">
+                +998 98 765 43 21
+            </a>
+            <a class="header_main-a6" href="/">
+                bozorda soting
+            </a>
+            <div class="header_main-translate">
+                <ul>
+                    <li><a href="/">Ўзб</a></li>
+                    <li><a href="/">O'z</a></li>
+                    <li><a href="/">Pyc</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+
+<!-- Navigatsion -->
+<nav>
+    <div class="nav_main container">
+        <a class="nav_main_a1" href="/"><img src="https://olcha.uz/_nuxt/logo-red.46354f18.png" alt=""></a>
+        <button class="nav_main_button1">
+            <span><i class="fa-solid fa-bars"></i>Katagol</span>
+        </button>
+        <div class="nav_main_input1">
+            <form method="get" action="{% url 'search' %}">
+                <input type="text" name="key" placeholder="Katagol bo'icha qidirish" id="">
+                <button><img src="https://olcha.uz/_nuxt/search.2a234c15.svg" alt=""></button>
+            </form>
+        </div>
+        <div class="nav_main_ul1" style="position: relative;">
+            {% if cartlarSoni == 0 %}
+            {% else %}
+            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                {{ cartlarSoni }}+
+            </span>
+            {% endif %}
+            <i style="background: transparent; position: relative;" class="fa-solid fa-cart-shopping"></i>
+            <a href="{% url 'shoppingCart'%}">Savatcha</a>
+        </div>
+        <div class="nav_main_ul1">
+            <i style="background: transparent; color: red;" class="fa-regular fa-heart"></i>
+            <a href="{% url 'like_page' %}">Favourites</a>
+        </div>
+
+        {% if not request.user.is_authenticated %}
+        <div class="nav_main_ul1">
+            <i class="fa-solid fa-registered"></i>
+            <a href="/register/">Register<a>
+        </div>
+
+        <div class="nav_main_ul1">
+
+
+            <i class="fa-regular fa-user"></i> <a href="/login/">Kirish</a>
+
+        </div>
+        {% else %}
+
+        <div class="nav_main_ul1">
+
+
+            <i class="fa-solid fa-right-from-bracket"></i> <a href="/logaut/">Logaut</a>
+
+        </div>
+        {% endif%}
+    </div>
+</nav>
+
+<div class="nav_bottom container">
+    <div class="nav_bottom-main ">
+        <ul>
+            <li><a href="/discount/">Skitka</a></li>
+            <li><a href="/gadjet/">Telepon va gadjet</a></li>
+            <li><a href="/texnika/">Texnika</a></li>
+            <li><a href="/kitob/">Kitob</a></li>
+            <li><a href="/tv/">Telvizor</a></li>
+            <li><a href="/expensiv/">Novinki</a></li>
+            <li><a href="/notebook/">Notebook</a></li>
+
+
+        </ul>
+    </div>
+</div>
