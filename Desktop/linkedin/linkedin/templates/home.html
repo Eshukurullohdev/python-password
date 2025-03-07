@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% block content %}
+<div class="container_fluid">
+    <!-- Left -->
+    <div class="w-full flex items-center justify-between">
+        <div class="container_fluid w-full p-2 mt-[30px]  flex items-center justify-between">
+            <div>
+                <div class="flex flex-col items-center justify-center relative">
+                    <div class="w-full h-16 bg-gray-100">
+                        <img class="w-[225px] h-[58px] rounded-t-lg" src="https://static.licdn.com/aero-v1/sc/h/55k1z8997gh8dwtihm11aajyq" alt="">
+                    </div>
+                    <div class="w-[225px] h-[180px] bg-white 
+                    rounded-b-lg shadow-md  p-2 relative text-center">
+                        <i style="border: 2px dashed #AEBFCE;" class="bg-[#E7E2DC] flex items-center justify-center text-[35px] text-[#788FA5] w-[68px] h-[68px] rounded-full absolute top-[-20px] left-[20px] fa-solid fa-user" ></i>
+                        <div class="w-[24px] h-[24px] bg-[#0A66C2] rounded-full absolute top-[19px] right-[138px]  text-white">
+                            <i class="fa-solid fa-plus"></i>
+                        </div>
+                        <div class="mt-8 text-left">
+                            <h2 class="text-[20px] font-semibold !pt-4">Shodiyorbek Qamb...</h2>
+                            <p class="text-[12px] text-gray-500">Poytug‘, Andijon viloyati</p>
+                            <p class="text-[12px] text-gray-600 mt-2">IT Manager at IT House </p>
+                       
+                        </div>
+                    </div>
+                </div>
+
+                <div class="w-[225px]  rounded-lg bg-white mt-2 p-4 flex  justify-between shadow-md">
+                    <div class="text-[12px]">
+                        <span class="text-[#000] font-bold">Connections</span> <br>
+                        <span class="text-gray-300 font-bold">Grow your network</span>
+                    </div>
+                    <div>
+                       <i class="text-[14px] fa-solid fa-user-plus"></i>
+                    </div>
+                </div>
+
+                <div class="w-[225px]  rounded-lg bg-white mt-2 p-4 shadow-md">
+                    <div class="text-[12px]">
+                        <span class="text-gray-300 font-bold">Unlock Premium tools & insights</span> 
+                    </div>
+                    <div class="flex gap-2 items-center mt-2">
+                        <div class="w-[13px] h-[13px] bg-[#DE8A29] rounded-sm"></div>
+                        <span class="text-[12px] font-bold hover:text-[#0562BC] cursor-pointer">Try Premium for $0</span>
+                    </div>
+                </div>
+                <div class="w-[225px] h-[144px] p-2 bg-white rounded-lg mt-2 shadow-md">
+                    <div class="flex items-center gap-2 text-[12px] font-semibold ">
+                        <i class="text-[14px] fa-solid fa-bookmark"></i>
+                        <a href="#" class="hover:decoration-solid">Saved items</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Left -->
+</div>
+{% endblock %}
