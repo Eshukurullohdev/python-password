@@ -2,9 +2,9 @@
 
 {% load static %}
 {% block content %}
-<div class="container_fluid">
+<div class="container_fluid ">
     <!-- Left -->
-    <div class="w-full flex items-center justify-between">
+    <div class="w-full flex ">
         <div class="container_fluid w-full p-2 mt-[30px]  flex items-center justify-between">
             <div>
                 <div class="flex flex-col items-center justify-center relative">
@@ -54,7 +54,50 @@
             </div>
         </div>
     </div>
-    
     <!-- Left -->
+     <!-- middle -->
+     <input type="checkbox" id="modal-toggle" class="hidden peer">
+
+     <!-- Post yaratish tugmasi -->
+     
+     <label for="modal-toggle" class="bg-blue-600 text-white px-4 py-2 rounded cursor-pointer hover:bg-blue-700 transition">
+         Post yaratish
+     </label>
+     <!-- Modal oyna -->
+     <div class="fixed inset-0 bg-black bg-opacity-50 hidden peer-checked:flex justify-center items-center">
+         <div class="bg-white p-6 rounded-lg shadow-lg w-80 relative">
+             <label for="modal-toggle" class="absolute top-3 right-3 text-red-500 text-xl cursor-pointer">&times;</label>
+             <h2 class="text-lg font-semibold mb-4">Rasm tanlang</h2>
+             
+             <form method="POST" enctype="multipart/form-data" class="flex flex-col items-center">
+                 {% csrf_token %}
+                 
+                 <!-- Fayl yuklash maydoni -->
+                 <label for="rasm_input" class="w-full h-40 border-2 border-dashed border-gray-400 flex flex-col justify-center items-center bg-gray-50 rounded-lg cursor-pointer hover:border-blue-500 transition">
+                     <span class="text-gray-600">Rasm yoki video tanlang</span>
+                     <input type="file" id="rasm_input" name="image" class="hidden" accept="image/*,video/mp4">
+                 </label>
+ 
+                 <button type="submit" class="mt-4 bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 transition">Postni yaratish</button>
+             </form>
+         </div>
+     </div>
+ 
+     <!-- Yuklangan postlar -->
+     <div class="mt-6 w-full max-w-4xl grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+         {% for post in posts %}
+             <div class="bg-white p-3 shadow rounded-lg flex flex-col items-center">
+                 <img src="{{ post.image.url }}" alt="Post rasmi" class="w-full h-48 object-cover rounded-md">
+                 <p class="text-sm text-gray-500 mt-2">{{ post.created_at|date:"Y-m-d H:i" }}</p>
+                 <form method="POST" action="{% url 'delete_post' post.id %}" class="mt-2">
+                     {% csrf_token %}
+                     <button type="submit" class="bg-red-600 text-white px-3 py-1 rounded hover:bg-red-700 transition">O'chirish</button>
+                 </form>
+             </div>
+         {% empty %}
+             <p class="text-center text-gray-600 col-span-full">Hozircha hech qanday post yo‘q.</p>
+         {% endfor %}
+     </div>
+    <!-- middle -->
 </div>
 {% endblock %}
