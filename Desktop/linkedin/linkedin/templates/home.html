@@ -2,26 +2,29 @@
 
 {% load static %}
 {% block content %}
-<div class="container_fluid ">
+<div class="container_fluid flex justify-between w-full">
     <!-- Left -->
-    <div class="w-full flex ">
+    <div class="w-full flex">
         <div class="container_fluid w-full p-2 mt-[30px]  flex items-center justify-between">
             <div>
                 <div class="flex flex-col items-center justify-center relative">
                     <div class="w-full h-16 bg-gray-100">
-                        <img class="w-[225px] h-[58px] rounded-t-lg" src="https://static.licdn.com/aero-v1/sc/h/55k1z8997gh8dwtihm11aajyq" alt="">
+                        <img class="w-[225px] h-[58px] rounded-t-lg"
+                            src="https://static.licdn.com/aero-v1/sc/h/55k1z8997gh8dwtihm11aajyq" alt="">
                     </div>
                     <div class="w-[225px] h-[180px] bg-white 
                     rounded-b-lg shadow-md  p-2 relative text-center">
-                        <i style="border: 2px dashed #AEBFCE;" class="bg-[#E7E2DC] flex items-center justify-center text-[35px] text-[#788FA5] w-[68px] h-[68px] rounded-full absolute top-[-20px] left-[20px] fa-solid fa-user" ></i>
-                        <div class="w-[24px] h-[24px] bg-[#0A66C2] rounded-full absolute top-[19px] right-[138px]  text-white">
+                        <i style="border: 2px dashed #AEBFCE;"
+                            class="bg-[#E7E2DC] flex items-center justify-center text-[35px] text-[#788FA5] w-[68px] h-[68px] rounded-full absolute top-[-20px] left-[20px] fa-solid fa-user"></i>
+                        <div
+                            class="w-[24px] h-[24px] bg-[#0A66C2] rounded-full absolute top-[19px] right-[138px]  text-white">
                             <i class="fa-solid fa-plus"></i>
                         </div>
                         <div class="mt-8 text-left">
                             <h2 class="text-[20px] font-semibold !pt-4">Shodiyorbek Qamb...</h2>
                             <p class="text-[12px] text-gray-500">Poytug‘, Andijon viloyati</p>
                             <p class="text-[12px] text-gray-600 mt-2">IT Manager at IT House </p>
-                       
+
                         </div>
                     </div>
                 </div>
@@ -32,17 +35,18 @@
                         <span class="text-gray-300 font-bold">Grow your network</span>
                     </div>
                     <div>
-                       <i class="text-[14px] fa-solid fa-user-plus"></i>
+                        <i class="text-[14px] fa-solid fa-user-plus"></i>
                     </div>
                 </div>
 
                 <div class="w-[225px]  rounded-lg bg-white mt-2 p-4 shadow-md">
                     <div class="text-[12px]">
-                        <span class="text-gray-300 font-bold">Unlock Premium tools & insights</span> 
+                        <span class="text-gray-300 font-bold">Unlock Premium tools & insights</span>
                     </div>
                     <div class="flex gap-2 items-center mt-2">
                         <div class="w-[13px] h-[13px] bg-[#DE8A29] rounded-sm"></div>
-                        <span class="text-[12px] font-bold hover:text-[#0562BC] cursor-pointer">Try Premium for $0</span>
+                        <span class="text-[12px] font-bold hover:text-[#0562BC] cursor-pointer">Try Premium for
+                            $0</span>
                     </div>
                 </div>
                 <div class="w-[225px] h-[144px] p-2 bg-white rounded-lg mt-2 shadow-md">
@@ -55,49 +59,56 @@
         </div>
     </div>
     <!-- Left -->
-     <!-- middle -->
-     <input type="checkbox" id="modal-toggle" class="hidden peer">
-
-     <!-- Post yaratish tugmasi -->
-     
-     <label for="modal-toggle" class="bg-blue-600 text-white px-4 py-2 rounded cursor-pointer hover:bg-blue-700 transition">
-         Post yaratish
-     </label>
-     <!-- Modal oyna -->
-     <div class="fixed inset-0 bg-black bg-opacity-50 hidden peer-checked:flex justify-center items-center">
-         <div class="bg-white p-6 rounded-lg shadow-lg w-80 relative">
-             <label for="modal-toggle" class="absolute top-3 right-3 text-red-500 text-xl cursor-pointer">&times;</label>
-             <h2 class="text-lg font-semibold mb-4">Rasm tanlang</h2>
-             
-             <form method="POST" enctype="multipart/form-data" class="flex flex-col items-center">
-                 {% csrf_token %}
-                 
-                 <!-- Fayl yuklash maydoni -->
-                 <label for="rasm_input" class="w-full h-40 border-2 border-dashed border-gray-400 flex flex-col justify-center items-center bg-gray-50 rounded-lg cursor-pointer hover:border-blue-500 transition">
-                     <span class="text-gray-600">Rasm yoki video tanlang</span>
-                     <input type="file" id="rasm_input" name="image" class="hidden" accept="image/*,video/mp4">
-                 </label>
- 
-                 <button type="submit" class="mt-4 bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 transition">Postni yaratish</button>
-             </form>
-         </div>
-     </div>
- 
-     <!-- Yuklangan postlar -->
-     <div class="mt-6 w-full max-w-4xl grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-         {% for post in posts %}
-             <div class="bg-white p-3 shadow rounded-lg flex flex-col items-center">
-                 <img src="{{ post.image.url }}" alt="Post rasmi" class="w-full h-48 object-cover rounded-md">
-                 <p class="text-sm text-gray-500 mt-2">{{ post.created_at|date:"Y-m-d H:i" }}</p>
-                 <form method="POST" action="{% url 'delete_post' post.id %}" class="mt-2">
-                     {% csrf_token %}
-                     <button type="submit" class="bg-red-600 text-white px-3 py-1 rounded hover:bg-red-700 transition">O'chirish</button>
-                 </form>
-             </div>
-         {% empty %}
-             <p class="text-center text-gray-600 col-span-full">Hozircha hech qanday post yo‘q.</p>
-         {% endfor %}
-     </div>
     <!-- middle -->
+    <div class=" mt-[30px] w-full">
+        <input type="checkbox" id="modal-toggle" class="hidden peer">
+        <!-- Post yaratish tugmasi -->
+        <label for="modal-toggle"
+            class="bg-blue-600 text-white px-4 py-2 rounded cursor-pointer hover:bg-blue-700 transition">
+            Post yaratish
+        </label>
+
+        <!-- Modal oyna -->
+        <div class="fixed inset-0 bg-black bg-opacity-50 hidden peer-checked:flex justify-center items-center">
+            <div class="bg-white p-6 rounded-lg shadow-lg w-80 relative">
+                <label for="modal-toggle"
+                    class="absolute top-3 right-3 text-red-500 text-xl cursor-pointer">&times;</label>
+                <h2 class="text-lg font-semibold mb-4">Rasm tanlang</h2>
+
+                <form method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <label for="rasm_input"
+                        class="w-full h-40 border-2 border-dashed border-gray-400 flex flex-col justify-center items-center bg-gray-50 rounded-lg cursor-pointer hover:border-blue-500 transition">
+                        <span class="text-gray-600">Rasm yoki video tanlang</span>
+                        <input type="file" id="rasm_input" name="image" class="hidden" accept="image/*,video/mp4">
+                    </label>
+
+                    <button type="submit"
+                        class="mt-4 bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 transition">
+                        Postni yaratish
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Barcha postlar ro‘yxati -->
+        <div class="mt-6 grid grid-cols-2 md:grid-cols-1 gap-4">
+           
+            {% for post in posts %}
+            <div class="bg-white p-3 shadow rounded-lg text-center">
+                <img src="{{ post.image.url }}" alt="Post rasmi" class="w-full h-auto object-cover rounded-md">
+
+            </div>
+            {% empty %}
+            <p class="text-center text-gray-600 col-span-full">Hozircha hech qanday post yo‘q.</p>
+            {% endfor %}
+        </div>
+    </div>
+    <!-- middle -->
+     <!-- right -->
+      <div class="w-full">
+        <h1>right</h1>
+      </div>
+      <!-- right -->
 </div>
 {% endblock %}

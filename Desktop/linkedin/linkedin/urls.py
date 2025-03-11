@@ -1,6 +1,6 @@
 from django.urls import path
-from .views import *
+from .views import home
 
 urlpatterns = [
-    path('home/', home, name='home'),
+    path('', home, name='home'),  # ✅ Asosiy sahifa  # ✅ Post o‘chirish
 ]
